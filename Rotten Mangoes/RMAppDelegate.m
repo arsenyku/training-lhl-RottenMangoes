@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 asu. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "RMAppDelegate.h"
 
-@interface AppDelegate ()
+@interface RMAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation RMAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

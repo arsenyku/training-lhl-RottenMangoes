@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ImageType) {
     Detailed
 };
 
-@interface Movie : NSObject
+@interface RMMovie : NSObject
 @property(nonatomic, strong, readonly)NSString* identifier;
 @property(nonatomic, strong, readonly)NSString* title;
 @property(nonatomic, strong, readonly)NSNumber* year;
@@ -27,5 +27,7 @@ typedef NS_ENUM(NSInteger, ImageType) {
 
 -(instancetype)initWithDictionary:(NSDictionary*)data;
 
--(UIImage*)imageWithType:(ImageType)type;
+-(NSString*)imageAddressWithType:(ImageType)type;
+
++(instancetype)movieWithDictionary:(NSDictionary*)data;
 @end
