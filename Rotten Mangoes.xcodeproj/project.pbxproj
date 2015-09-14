@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123276191BA74D3F00CD8675 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 123276181BA74D3F00CD8675 /* Movie.m */; };
+		1232761C1BA7547D00CD8675 /* NSNumber+NumberFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232761B1BA7547D00CD8675 /* NSNumber+NumberFromString.m */; };
 		1299CE001BA747AD003FD6F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1299CDFF1BA747AD003FD6F7 /* main.m */; };
 		1299CE031BA747AD003FD6F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1299CE021BA747AD003FD6F7 /* AppDelegate.m */; };
 		1299CE061BA747AD003FD6F7 /* Rotten_Mangoes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1299CE041BA747AD003FD6F7 /* Rotten_Mangoes.xcdatamodeld */; };
@@ -28,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		123276171BA74D3F00CD8675 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		123276181BA74D3F00CD8675 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		1232761A1BA7547D00CD8675 /* NSNumber+NumberFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+NumberFromString.h"; sourceTree = "<group>"; };
+		1232761B1BA7547D00CD8675 /* NSNumber+NumberFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+NumberFromString.m"; sourceTree = "<group>"; };
 		1299CDFA1BA747AD003FD6F7 /* Rotten Mangoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotten Mangoes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1299CDFE1BA747AD003FD6F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1299CDFF1BA747AD003FD6F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,6 +98,10 @@
 				1299CE0F1BA747AD003FD6F7 /* LaunchScreen.xib */,
 				1299CE041BA747AD003FD6F7 /* Rotten_Mangoes.xcdatamodeld */,
 				1299CDFD1BA747AD003FD6F7 /* Supporting Files */,
+				123276171BA74D3F00CD8675 /* Movie.h */,
+				123276181BA74D3F00CD8675 /* Movie.m */,
+				1232761A1BA7547D00CD8675 /* NSNumber+NumberFromString.h */,
+				1232761B1BA7547D00CD8675 /* NSNumber+NumberFromString.m */,
 			);
 			path = "Rotten Mangoes";
 			sourceTree = "<group>";
@@ -224,6 +234,8 @@
 			files = (
 				1299CE061BA747AD003FD6F7 /* Rotten_Mangoes.xcdatamodeld in Sources */,
 				1299CE031BA747AD003FD6F7 /* AppDelegate.m in Sources */,
+				123276191BA74D3F00CD8675 /* Movie.m in Sources */,
+				1232761C1BA7547D00CD8675 /* NSNumber+NumberFromString.m in Sources */,
 				1299CE091BA747AD003FD6F7 /* ViewController.m in Sources */,
 				1299CE001BA747AD003FD6F7 /* main.m in Sources */,
 			);
@@ -420,6 +432,7 @@
 				1299CE221BA747AD003FD6F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1299CE231BA747AD003FD6F7 /* Build configuration list for PBXNativeTarget "Rotten MangoesTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +441,7 @@
 				1299CE251BA747AD003FD6F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
