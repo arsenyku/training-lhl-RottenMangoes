@@ -14,7 +14,7 @@
 static NSString* const API_KEY = @"j9fhnct2tp8wu2q9h75kanh9";
 static NSString* const InTheatresKey_Movies = @"movies";
 
-@interface RMInTheatresMasterViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface RMInTheatresMasterViewController () <UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property(nonatomic, strong) NSMutableArray *moviesInTheatres;
 @end
@@ -23,7 +23,7 @@ static NSString* const InTheatresKey_Movies = @"movies";
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super init];
+    self = [super initWithCoder:aDecoder];
     if (self) {
         _moviesInTheatres = [NSMutableArray new];
     }
@@ -36,19 +36,11 @@ static NSString* const InTheatresKey_Movies = @"movies";
 
     [self loadInitialData];
     
-    [self.collectionView reloadData];
-    
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 #pragma mark - <UICollectionViewDataSource>
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return [self.moviesInTheatres count];
@@ -64,6 +56,9 @@ static NSString* const InTheatresKey_Movies = @"movies";
     [cell setContent:self.moviesInTheatres[ indexPath.item ] ];
 
     return cell;
+}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
 }
 
 
@@ -93,6 +88,12 @@ static NSString* const InTheatresKey_Movies = @"movies";
         for (NSDictionary *movieData in movies) {
             [self.moviesInTheatres addObject:[RMMovie movieWithDictionary:movieData]];
         }
+        
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            [self.collectionView reloadData];
+        });
+
+        
     }];
 
 }

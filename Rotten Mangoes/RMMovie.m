@@ -22,6 +22,7 @@ static NSString* const InTheatresKey_Runtime = @"runtime";
 static NSString* const InTheatresKey_Synopsis = @"synopsis";
 static NSString* const InTheatresKey_Images = @"posters";
 
+static NSString* const HighResImageUrl = @"dkpu1ddg7pbsk.cloudfront.net";
 
 @interface RMMovie()
 @property(nonatomic, strong)NSString* identifier;
@@ -33,7 +34,6 @@ static NSString* const InTheatresKey_Images = @"posters";
 @property(nonatomic, strong)NSDictionary* imageAddresses;
 
 @end
-
 @implementation RMMovie
 -(instancetype)initWithDictionary:(NSDictionary*)movieData{
     self = [super init];
@@ -53,7 +53,7 @@ static NSString* const InTheatresKey_Images = @"posters";
 
 
 -(NSString *)imageAddressWithType:(ImageType)type{
-	if (self.images == nil)
+	if (self.imageAddresses == nil)
         return nil;
     
     NSString *key = ImageKey_Original;
@@ -74,7 +74,15 @@ static NSString* const InTheatresKey_Images = @"posters";
             break;
     }
     
-    return self.imageAddresses[ key ];
+    NSString *result = self.imageAddresses[ key ];
+    NSRange range = [result rangeOfString:HighResImageUrl];
+	
+    if (range.location < NSNotFound)
+	    result = [NSString stringWithFormat:@"http://%@", [result substringFromIndex:range.location]];
+    else
+	    NSLog(@"Unexpected URL for image %@", result);
+    
+    return result;
 }
 
 

@@ -15,33 +15,45 @@
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 
 @property (nonatomic) RMMovie *movie;
-@property (nonatomic) UIImage *image;
+
 @end
 
 @implementation RMMovieCell
 
+-(void)setRatingLabel:(UILabel *)ratingLabel{
+    _ratingLabel = ratingLabel;
+    
+    _ratingLabel.layer.cornerRadius = 10.0f;
+    _ratingLabel.layer.masksToBounds = YES;
+}
 
+    
 -(void)setContent:(RMMovie*)movie{
     _movie = movie;
 
     self.titleLabel.text = self.movie.title;
     self.ratingLabel.text = self.movie.mpaaRating;
+    self.collectionImageView.image = nil;
     
-    NSString* movieImageAddress = [self.movie imageAddressWithType:Thumbnail];
-    [NSURL downloadFromAddress:movieImageAddress completion:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        UIImage *downloadedImage = [UIImage imageWithData:data];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            self.collectionImageView.image = downloadedImage;
-            
-        });
-        
-        
-    }];
+    NSString* movieImageAddress = [self.movie imageAddressWithType:Original];
+    [NSURL downloadFromAddress:movieImageAddress
+                    completion:^(NSData *data, NSURLResponse *response, NSError *error) {
+                        
+                        if (error)
+                            NSLog(@"Error while downloading image: %@", error);
+                        
+                        UIImage *downloadedImage = [UIImage imageWithData:data];
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            self.collectionImageView.image = downloadedImage;
+                            
+                        });
+                        
+                        
+                    }
+     ];
 
-    self.collectionImageView.image = self.image;
 }
 
 @end
