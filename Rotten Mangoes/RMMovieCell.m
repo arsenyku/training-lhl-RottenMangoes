@@ -58,7 +58,7 @@
                                                    NSString *expectedURL = [self.movie imageAddressWithType:Original];
                                                    
                                                    if (! [response.URL.absoluteString isEqualToString:expectedURL]){
-                                                       NSLog(@"Discarding");
+                                                       NSLog(@"Discarding stale data from %@", response.URL.absoluteString);
                                                        return ;
                                                    }
                                                    
