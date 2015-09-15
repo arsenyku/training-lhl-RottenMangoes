@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "RMMovie.h"
-#import "RMDownloadManager.h"
 
 @interface RMMovieCell : UICollectionViewCell
 -(void)setContent:(RMMovie*)movie;

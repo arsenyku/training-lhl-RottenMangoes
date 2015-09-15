@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 asu. All rights reserved.
 //
 
-#import "NSURL+DownloadFromAddress.h"
+#import "NSURLSession+DownloadFromAddress.h"
 
-@implementation NSURL (DownloadFromAddress)
-+(void)downloadFromAddress:(NSString*)address
+@implementation NSURLSession (DownloadFromAddress)
++(NSURLSessionTask*)downloadFromAddress:(NSString*)address
                 completion:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler{
     
     NSURLSession *session = [NSURLSession sharedSession];
@@ -17,6 +17,7 @@
                                         completionHandler:completionHandler];
     
     [dataTask resume];
+    return dataTask;
 }
 
 

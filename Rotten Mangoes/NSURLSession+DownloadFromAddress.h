@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSURL (DownloadFromAddress)
-+(void)downloadFromAddress:(NSString*)address
+@interface NSURLSession (DownloadFromAddress)
++(NSURLSessionTask*)downloadFromAddress:(NSString*)address
                 completion:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
 @end

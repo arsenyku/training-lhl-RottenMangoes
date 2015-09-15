@@ -7,7 +7,7 @@
 //
 
 #import "RMMovieCell.h"
-#import "NSURL+DownloadFromAddress.h"
+#import "NSURLSession+DownloadFromAddress.h"
 
 @interface RMMovieCell()
 @property (weak, nonatomic) IBOutlet UIImageView *collectionImageView;
@@ -16,9 +16,12 @@
 
 @property (nonatomic) RMMovie *movie;
 
+@property (nonatomic) NSURLSessionTask *downloadTask;
+
 @end
 
 @implementation RMMovieCell
+
 
 -(void)setRatingLabel:(UILabel *)ratingLabel{
     _ratingLabel = ratingLabel;
@@ -35,42 +38,49 @@
     self.ratingLabel.text = self.movie.mpaaRating;
     self.collectionImageView.image = nil;
 
-    NSString* movieImageAddress = [self.movie imageAddressWithType:Original];
-    
-    
-    RMDownloadManager *x = [RMDownloadManager sharedManager];
-    int tracker = [[RMDownloadManager sharedManager] trackDownloadWithUrl:movieImageAddress];
-    self.tag = tracker;
-
-    NSLog(@"%d %@", tracker, movieImageAddress);
-    
-    [NSURL downloadFromAddress:movieImageAddress
-                    completion:^(NSData *data, NSURLResponse *response, NSError *error) {
-                        
-                        int trackingNumber = [[RMDownloadManager sharedManager] trackingNumberForURL:movieImageAddress];
-                        
-                        if (self.tag != trackingNumber){
-                            NSLog(@"Discarding");
-                            return;
-                        }
-                        
-                        if (error)
-                            NSLog(@"Error while downloading image: %@", error);
-                        
-                        UIImage *downloadedImage = [UIImage imageWithData:data];
-                        
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            
-                            self.collectionImageView.image = downloadedImage;
-                            
-                        });
-                        
-                        [[RMDownloadManager sharedManager] completeDownloadWithURL:movieImageAddress];
-                        
-
-                    }
-     ];
-
+    [self downloadMovieImage];
 }
 
+
+-(void)downloadMovieImage{
+    
+    NSString* movieImageAddress = [self.movie imageAddressWithType:Original];
+ 
+    if (self.downloadTask){
+        [self.downloadTask suspend];
+        [self.downloadTask cancel];
+    }
+    
+    self.downloadTask = [NSURLSession downloadFromAddress:movieImageAddress
+                                               completion:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                   
+                                                   
+                                                   NSString *expectedURL = [self.movie imageAddressWithType:Original];
+                                                   
+                                                   if (! [response.URL.absoluteString isEqualToString:expectedURL]){
+                                                       NSLog(@"Discarding");
+                                                       return ;
+                                                   }
+                                                   
+                                                   
+                                                   if (error)
+                                                       NSLog(@"Error while downloading image: %@", error);
+                                                   
+                                                   if (error.code == NSURLErrorCancelled)
+                                                       return;
+                                                   
+                                                   UIImage *downloadedImage = [UIImage imageWithData:data];
+                                                   
+                                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                                       
+                                                       self.collectionImageView.image = downloadedImage;
+                                                       
+                                                   });
+                                                   
+                                                   
+                                               }
+                         ];
+    
+
+}
 @end

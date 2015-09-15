@@ -9,7 +9,7 @@
 #import "RMInTheatresMasterViewController.h"
 #import "RMMovie.h"
 #import "RMMovieCell.h"
-#import "NSURL+DownloadFromAddress.h"
+#import "NSURLSession+DownloadFromAddress.h"
 
 static NSString* const API_KEY = @"j9fhnct2tp8wu2q9h75kanh9";
 static NSString* const InTheatresKey_Movies = @"movies";
@@ -71,7 +71,7 @@ static NSString* const InTheatresKey_Movies = @"movies";
     NSString *urlString = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=%@&page_limit=50";
     NSString *urlStringWithApiKey = [NSString stringWithFormat:urlString, API_KEY];
     
-    [NSURL downloadFromAddress:urlStringWithApiKey completion:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [NSURLSession downloadFromAddress:urlStringWithApiKey completion:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (error){
             NSLog(@"In Theatres Endpoint Download Error: %@", error);
