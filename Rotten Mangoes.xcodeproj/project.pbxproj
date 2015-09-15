@@ -11,6 +11,7 @@
 		1232761C1BA7547D00CD8675 /* NSNumber+NumberFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232761B1BA7547D00CD8675 /* NSNumber+NumberFromString.m */; };
 		1232761F1BA761F500CD8675 /* RMMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232761E1BA761F500CD8675 /* RMMovieCell.m */; };
 		123276221BA77BA900CD8675 /* NSURL+DownloadFromAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 123276211BA77BA900CD8675 /* NSURL+DownloadFromAddress.m */; };
+		124EB7A51BA7B6310051A678 /* RMDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 124EB7A41BA7B6310051A678 /* RMDownloadManager.m */; };
 		1299CE001BA747AD003FD6F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1299CDFF1BA747AD003FD6F7 /* main.m */; };
 		1299CE031BA747AD003FD6F7 /* RMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1299CE021BA747AD003FD6F7 /* RMAppDelegate.m */; };
 		1299CE061BA747AD003FD6F7 /* Rotten_Mangoes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1299CE041BA747AD003FD6F7 /* Rotten_Mangoes.xcdatamodeld */; };
@@ -40,6 +41,8 @@
 		1232761E1BA761F500CD8675 /* RMMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMovieCell.m; sourceTree = "<group>"; };
 		123276201BA77BA900CD8675 /* NSURL+DownloadFromAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+DownloadFromAddress.h"; sourceTree = "<group>"; };
 		123276211BA77BA900CD8675 /* NSURL+DownloadFromAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+DownloadFromAddress.m"; sourceTree = "<group>"; };
+		124EB7A31BA7B6310051A678 /* RMDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDownloadManager.h; sourceTree = "<group>"; };
+		124EB7A41BA7B6310051A678 /* RMDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDownloadManager.m; sourceTree = "<group>"; };
 		1299CDFA1BA747AD003FD6F7 /* Rotten Mangoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotten Mangoes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1299CDFE1BA747AD003FD6F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1299CDFF1BA747AD003FD6F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				1299CE081BA747AD003FD6F7 /* RMInTheatresMasterViewController.m */,
 				123276171BA74D3F00CD8675 /* RMMovie.h */,
 				123276181BA74D3F00CD8675 /* RMMovie.m */,
+				124EB7A31BA7B6310051A678 /* RMDownloadManager.h */,
+				124EB7A41BA7B6310051A678 /* RMDownloadManager.m */,
 				1232761A1BA7547D00CD8675 /* NSNumber+NumberFromString.h */,
 				1232761B1BA7547D00CD8675 /* NSNumber+NumberFromString.m */,
 				123276201BA77BA900CD8675 /* NSURL+DownloadFromAddress.h */,
@@ -242,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				124EB7A51BA7B6310051A678 /* RMDownloadManager.m in Sources */,
 				1232761F1BA761F500CD8675 /* RMMovieCell.m in Sources */,
 				1299CE061BA747AD003FD6F7 /* Rotten_Mangoes.xcdatamodeld in Sources */,
 				123276221BA77BA900CD8675 /* NSURL+DownloadFromAddress.m in Sources */,

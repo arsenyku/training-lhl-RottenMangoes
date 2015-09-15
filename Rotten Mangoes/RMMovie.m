@@ -78,7 +78,7 @@ static NSString* const HighResImageUrl = @"dkpu1ddg7pbsk.cloudfront.net";
     NSRange range = [result rangeOfString:HighResImageUrl];
 	
     if (range.location < NSNotFound)
-	    result = [NSString stringWithFormat:@"http://%@", [result substringFromIndex:range.location]];
+	    result = [NSString stringWithFormat:@"https://%@", [result substringFromIndex:range.location]];
     else
 	    NSLog(@"Unexpected URL for image %@", result);
     

@@ -57,6 +57,9 @@ static NSString* const InTheatresKey_Movies = @"movies";
 
     return cell;
 }
+
+
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }

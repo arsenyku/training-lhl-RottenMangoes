@@ -34,10 +34,25 @@
     self.titleLabel.text = self.movie.title;
     self.ratingLabel.text = self.movie.mpaaRating;
     self.collectionImageView.image = nil;
-    
+
     NSString* movieImageAddress = [self.movie imageAddressWithType:Original];
+    
+    
+    RMDownloadManager *x = [RMDownloadManager sharedManager];
+    int tracker = [[RMDownloadManager sharedManager] trackDownloadWithUrl:movieImageAddress];
+    self.tag = tracker;
+
+    NSLog(@"%d %@", tracker, movieImageAddress);
+    
     [NSURL downloadFromAddress:movieImageAddress
                     completion:^(NSData *data, NSURLResponse *response, NSError *error) {
+                        
+                        int trackingNumber = [[RMDownloadManager sharedManager] trackingNumberForURL:movieImageAddress];
+                        
+                        if (self.tag != trackingNumber){
+                            NSLog(@"Discarding");
+                            return;
+                        }
                         
                         if (error)
                             NSLog(@"Error while downloading image: %@", error);
@@ -50,7 +65,9 @@
                             
                         });
                         
+                        [[RMDownloadManager sharedManager] completeDownloadWithURL:movieImageAddress];
                         
+
                     }
      ];
 
