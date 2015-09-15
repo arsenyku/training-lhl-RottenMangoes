@@ -13,19 +13,31 @@
 
 static NSString* const API_KEY = @"j9fhnct2tp8wu2q9h75kanh9";
 static NSString* const InTheatresKey_Movies = @"movies";
+static NSString* const InTheatresKey_Total = @"total";
 
 @interface RMInTheatresMasterViewController () <UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property(nonatomic, strong) NSMutableArray *moviesInTheatres;
+
+@property(nonatomic)UIRefreshControl *refreshControl;
+
+@property(nonatomic)int moviesPerPage;
+@property(nonatomic)int currentPage;
+@property(nonatomic)int numberOfMoviesInTheatres;
+
 @end
 
 @implementation RMInTheatresMasterViewController
+
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
         _moviesInTheatres = [NSMutableArray new];
+        _moviesPerPage = 50;
+        _currentPage = 1;
+        _numberOfMoviesInTheatres = 0;
     }
     return self;
 }
@@ -33,9 +45,24 @@ static NSString* const InTheatresKey_Movies = @"movies";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
-    [self loadInitialData];
     
+    [self loadData];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"ShowMovieDetail"]){
+        
+    }
+}
+
+
+#pragma mark - <UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    RMMovie *movie = self.moviesInTheatres[indexPath.item];
+    [self performSegueWithIdentifier:@"ShowMovieDetail" sender:movie];
 }
 
 
@@ -55,6 +82,11 @@ static NSString* const InTheatresKey_Movies = @"movies";
 
     [cell setContent:self.moviesInTheatres[ indexPath.item ] ];
 
+    NSLog(@"%d x %d : %d", self.moviesPerPage, self.currentPage, indexPath.item);
+    if (self.moviesPerPage * self.currentPage - 1 <= indexPath.item){
+        [self loadMoreData];
+    }
+    
     return cell;
 }
 
@@ -67,11 +99,9 @@ static NSString* const InTheatresKey_Movies = @"movies";
 
 #pragma mark - private
 
--(void)loadInitialData{
-    NSString *urlString = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=%@&page_limit=50";
-    NSString *urlStringWithApiKey = [NSString stringWithFormat:urlString, API_KEY];
+-(void)loadData{
     
-    [NSURLSession downloadFromAddress:urlStringWithApiKey completion:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [NSURLSession downloadFromAddress:self.urlStringWithApiKey completion:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (error){
             NSLog(@"In Theatres Endpoint Download Error: %@", error);
@@ -85,7 +115,8 @@ static NSString* const InTheatresKey_Movies = @"movies";
             NSLog(@"In Theatres Endpoint Deserialization Error: %@", error);
             return;
         }
-        
+
+        self.numberOfMoviesInTheatres = [(NSNumber *)inTheatres[ InTheatresKey_Total ] intValue];
         NSArray *movies = inTheatres[ InTheatresKey_Movies ];
         
         for (NSDictionary *movieData in movies) {
@@ -94,10 +125,32 @@ static NSString* const InTheatresKey_Movies = @"movies";
         
         dispatch_async(dispatch_get_main_queue(), ^ {
             [self.collectionView reloadData];
+
         });
 
         
     }];
 
 }
+
+-(BOOL)moreMoviesAvailable{
+    int downloadedSoFar = self.moviesPerPage * self.currentPage;
+    return ( downloadedSoFar < self.numberOfMoviesInTheatres );
+}
+
+-(void)loadMoreData{
+    
+    if ( [self moreMoviesAvailable] ){
+        self.currentPage += 1;
+        [self loadData];
+    }
+}
+
+-(NSString*)urlStringWithApiKey{
+    NSString *urlString = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=%@&page_limit=%d&page=%d";
+    NSString *urlStringWithApiKey = [NSString stringWithFormat:urlString, API_KEY, self.moviesPerPage, self.currentPage];
+    return urlStringWithApiKey;
+}
+
+
 @end

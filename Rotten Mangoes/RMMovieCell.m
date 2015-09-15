@@ -35,7 +35,7 @@
     _movie = movie;
 
     self.titleLabel.text = self.movie.title;
-    self.ratingLabel.text = self.movie.mpaaRating;
+    self.ratingLabel.text = [NSString stringWithFormat:@"%@", self.movie.mpaaRating];
     self.collectionImageView.image = nil;
 
     [self downloadMovieImage];

@@ -19,6 +19,7 @@
 		1299CE0E1BA747AD003FD6F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1299CE0D1BA747AD003FD6F7 /* Images.xcassets */; };
 		1299CE111BA747AD003FD6F7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1299CE0F1BA747AD003FD6F7 /* LaunchScreen.xib */; };
 		1299CE1D1BA747AD003FD6F7 /* Rotten_MangoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1299CE1C1BA747AD003FD6F7 /* Rotten_MangoesTests.m */; };
+		129E27291BA8048800B0200D /* RMMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129E27281BA8048800B0200D /* RMMovieDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		1299CE161BA747AD003FD6F7 /* Rotten MangoesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rotten MangoesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1299CE1B1BA747AD003FD6F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1299CE1C1BA747AD003FD6F7 /* Rotten_MangoesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rotten_MangoesTests.m; sourceTree = "<group>"; };
+		129E27271BA8048800B0200D /* RMMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMovieDetailViewController.h; sourceTree = "<group>"; };
+		129E27281BA8048800B0200D /* RMMovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMovieDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				1232761E1BA761F500CD8675 /* RMMovieCell.m */,
 				1299CE071BA747AD003FD6F7 /* RMInTheatresMasterViewController.h */,
 				1299CE081BA747AD003FD6F7 /* RMInTheatresMasterViewController.m */,
+				129E27271BA8048800B0200D /* RMMovieDetailViewController.h */,
+				129E27281BA8048800B0200D /* RMMovieDetailViewController.m */,
 				123276171BA74D3F00CD8675 /* RMMovie.h */,
 				123276181BA74D3F00CD8675 /* RMMovie.m */,
 				1232761A1BA7547D00CD8675 /* NSNumber+NumberFromString.h */,
@@ -249,6 +254,7 @@
 				123276191BA74D3F00CD8675 /* RMMovie.m in Sources */,
 				1232761C1BA7547D00CD8675 /* NSNumber+NumberFromString.m in Sources */,
 				1299CE091BA747AD003FD6F7 /* RMInTheatresMasterViewController.m in Sources */,
+				129E27291BA8048800B0200D /* RMMovieDetailViewController.m in Sources */,
 				1299CE001BA747AD003FD6F7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
