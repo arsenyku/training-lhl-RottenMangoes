@@ -26,6 +26,8 @@ typedef NS_ENUM(NSInteger, ImageType) {
 @property(nonatomic, strong, readonly)NSDictionary* images;
 @property(nonatomic, strong, readonly)NSDictionary* cast;
 
+-(NSArray*)actorNames;
+
 -(instancetype)initWithDictionary:(NSDictionary*)data;
 
 -(NSString*)imageAddressWithType:(ImageType)type;
