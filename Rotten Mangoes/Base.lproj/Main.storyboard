@@ -120,23 +120,23 @@
                                     <segue destination="t0o-Gk-oKX" kind="embed" id="6kq-K4-phC"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuD-bX-y0d" userLabel="Label1">
-                                <rect key="frame" x="129" y="70" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg0-E5-SeB" userLabel="Label3">
-                                <rect key="frame" x="129" y="222" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ho-DD-JnX">
                                 <rect key="frame" x="300" y="0.0" width="300" height="300"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDp-nz-Cbo" userLabel="Label2">
-                                <rect key="frame" x="129" y="141" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-WM-aV0" userLabel="Label1">
+                                <rect key="frame" x="16" y="70" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czx-tU-QBq" userLabel="Label2">
+                                <rect key="frame" x="16" y="101" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSP-3S-BRj" userLabel="Label3">
+                                <rect key="frame" x="16" y="152" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -146,18 +146,18 @@
                         <constraints>
                             <constraint firstItem="6ho-DD-JnX" firstAttribute="width" secondItem="17P-OO-jXU" secondAttribute="width" multiplier="1:2" id="0bz-ic-zOf" userLabel="Image width"/>
                             <constraint firstItem="7sI-QG-VT4" firstAttribute="bottom" secondItem="17P-OO-jXU" secondAttribute="bottom" id="32a-Lb-sTV" userLabel="Container bottom"/>
-                            <constraint firstItem="DDp-nz-Cbo" firstAttribute="centerX" secondItem="yg0-E5-SeB" secondAttribute="centerX" id="6H3-B8-khP" userLabel="Label3 centre x"/>
+                            <constraint firstItem="HMN-WM-aV0" firstAttribute="leading" secondItem="17P-OO-jXU" secondAttribute="leadingMargin" id="6Fh-tc-tdj" userLabel="Label1 left"/>
                             <constraint firstItem="6ho-DD-JnX" firstAttribute="top" secondItem="17P-OO-jXU" secondAttribute="top" id="8C2-Ut-AAA" userLabel="ImageView top "/>
                             <constraint firstItem="6ho-DD-JnX" firstAttribute="bottom" secondItem="7sI-QG-VT4" secondAttribute="top" id="92t-XR-BVN" userLabel="Image bottom"/>
+                            <constraint firstItem="BSP-3S-BRj" firstAttribute="leading" secondItem="HMN-WM-aV0" secondAttribute="leading" id="9U1-bd-gFA" userLabel="Label 3 left"/>
                             <constraint firstItem="7sI-QG-VT4" firstAttribute="leading" secondItem="17P-OO-jXU" secondAttribute="leading" id="EEX-F7-usd" userLabel="Container left"/>
-                            <constraint firstItem="CuD-bX-y0d" firstAttribute="top" secondItem="17P-OO-jXU" secondAttribute="top" constant="70" id="GIc-pn-cjk" userLabel="Label1 top"/>
                             <constraint firstItem="7sI-QG-VT4" firstAttribute="height" secondItem="17P-OO-jXU" secondAttribute="height" multiplier="1:2" id="IE2-uo-GaW" userLabel="Container height"/>
+                            <constraint firstItem="czx-tU-QBq" firstAttribute="top" secondItem="HMN-WM-aV0" secondAttribute="bottom" constant="10" id="N1y-Xd-EoN" userLabel="Spacer 1 to 2"/>
                             <constraint firstItem="7sI-QG-VT4" firstAttribute="right" secondItem="17P-OO-jXU" secondAttribute="right" id="YLE-tS-jMh" userLabel="Container right"/>
-                            <constraint firstItem="DDp-nz-Cbo" firstAttribute="centerX" secondItem="CuD-bX-y0d" secondAttribute="centerX" id="Zfm-qo-eKq" userLabel="Label2 centre x"/>
-                            <constraint firstAttribute="centerX" secondItem="CuD-bX-y0d" secondAttribute="centerX" multiplier="2:1" id="kDJ-0m-SIl" userLabel="Label1 centre x"/>
+                            <constraint firstItem="HMN-WM-aV0" firstAttribute="top" secondItem="17P-OO-jXU" secondAttribute="topMargin" constant="70" id="bO2-cC-Jfh" userLabel="Label1 top"/>
+                            <constraint firstItem="BSP-3S-BRj" firstAttribute="top" secondItem="czx-tU-QBq" secondAttribute="bottom" constant="30" id="qzG-Y9-uVT" userLabel="Spacer 2 to 3"/>
                             <constraint firstItem="6ho-DD-JnX" firstAttribute="trailing" secondItem="17P-OO-jXU" secondAttribute="trailing" id="ryy-ew-YXY" userLabel="ImageView right"/>
-                            <constraint firstItem="yg0-E5-SeB" firstAttribute="top" secondItem="DDp-nz-Cbo" secondAttribute="bottom" constant="60" id="uSZ-B5-wct" userLabel="Spacer 2 to 3"/>
-                            <constraint firstItem="DDp-nz-Cbo" firstAttribute="top" secondItem="CuD-bX-y0d" secondAttribute="bottom" constant="50" id="x8f-C3-CkB" userLabel="Spacer 1 to 2"/>
+                            <constraint firstItem="czx-tU-QBq" firstAttribute="leading" secondItem="HMN-WM-aV0" secondAttribute="leading" id="xt4-9n-aeS" userLabel="Label 2 left"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -193,7 +193,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </pageControl>
             </objects>
-            <point key="canvasLocation" x="2245" y="1156"/>
+            <point key="canvasLocation" x="2255" y="1152"/>
         </scene>
     </scenes>
 </document>

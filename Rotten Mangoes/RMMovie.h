@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger, ImageType) {
 @property(nonatomic, strong, readonly)NSNumber* runtimeInMinutes;
 @property(nonatomic, strong, readonly)NSString* synopsis;
 @property(nonatomic, strong, readonly)NSDictionary* images;
+@property(nonatomic, strong, readonly)NSDictionary* cast;
 
 -(instancetype)initWithDictionary:(NSDictionary*)data;
 

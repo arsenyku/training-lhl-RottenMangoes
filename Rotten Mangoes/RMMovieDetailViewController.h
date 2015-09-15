@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RMMovie.h"
 
 @interface RMMovieDetailViewController : UIViewController
-
+@property(nonatomic)RMMovie *movie;
 @end

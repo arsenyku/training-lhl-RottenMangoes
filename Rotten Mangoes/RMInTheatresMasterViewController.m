@@ -7,6 +7,7 @@
 //
 
 #import "RMInTheatresMasterViewController.h"
+#import "RMMovieDetailViewController.h"
 #import "RMMovie.h"
 #import "RMMovieCell.h"
 #import "NSURLSession+DownloadFromAddress.h"
@@ -18,8 +19,6 @@ static NSString* const InTheatresKey_Total = @"total";
 @interface RMInTheatresMasterViewController () <UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property(nonatomic, strong) NSMutableArray *moviesInTheatres;
-
-@property(nonatomic)UIRefreshControl *refreshControl;
 
 @property(nonatomic)int moviesPerPage;
 @property(nonatomic)int currentPage;
@@ -52,7 +51,9 @@ static NSString* const InTheatresKey_Total = @"total";
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"ShowMovieDetail"]){
+        RMMovieDetailViewController *destination = segue.destinationViewController;
         
+        destination.movie = sender;
     }
 }
 
@@ -82,7 +83,6 @@ static NSString* const InTheatresKey_Total = @"total";
 
     [cell setContent:self.moviesInTheatres[ indexPath.item ] ];
 
-    NSLog(@"%d x %d : %d", self.moviesPerPage, self.currentPage, indexPath.item);
     if (self.moviesPerPage * self.currentPage - 1 <= indexPath.item){
         [self loadMoreData];
     }

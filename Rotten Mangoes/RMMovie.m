@@ -21,6 +21,9 @@ static NSString* const InTheatresKey_MpaaRating = @"mpaa_rating";
 static NSString* const InTheatresKey_Runtime = @"runtime";
 static NSString* const InTheatresKey_Synopsis = @"synopsis";
 static NSString* const InTheatresKey_Images = @"posters";
+static NSString* const InTheatresKey_Cast = @"abridged_cast";
+
+static NSString* const CastKey_Name = @"name";
 
 static NSString* const HighResImageUrl = @"dkpu1ddg7pbsk.cloudfront.net";
 
@@ -32,7 +35,7 @@ static NSString* const HighResImageUrl = @"dkpu1ddg7pbsk.cloudfront.net";
 @property(nonatomic, strong)NSNumber* runtimeInMinutes;
 @property(nonatomic, strong)NSString* synopsis;
 @property(nonatomic, strong)NSDictionary* imageAddresses;
-
+@property(nonatomic, strong)NSDictionary* cast;
 @end
 @implementation RMMovie
 -(instancetype)initWithDictionary:(NSDictionary*)movieData{
@@ -45,12 +48,20 @@ static NSString* const HighResImageUrl = @"dkpu1ddg7pbsk.cloudfront.net";
         _runtimeInMinutes = movieData[ InTheatresKey_Runtime ];
         _synopsis = movieData[ InTheatresKey_Synopsis ];
         _imageAddresses = movieData[ InTheatresKey_Images ];
+        _cast = movieData[ InTheatresKey_Cast ];
     }
     return self;
 }
 
 
-
+-(NSArray*)actorNames{
+    NSMutableArray *result = [NSMutableArray new];
+    for (NSDictionary* actorInfo in self.cast) {
+        NSString *actorName = actorInfo[ CastKey_Name ];
+        [result addObject:actorName];
+    }
+    return [result copy];
+}
 
 -(NSString *)imageAddressWithType:(ImageType)type{
 	if (self.imageAddresses == nil)

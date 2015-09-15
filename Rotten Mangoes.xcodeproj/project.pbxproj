@@ -20,6 +20,9 @@
 		1299CE111BA747AD003FD6F7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1299CE0F1BA747AD003FD6F7 /* LaunchScreen.xib */; };
 		1299CE1D1BA747AD003FD6F7 /* Rotten_MangoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1299CE1C1BA747AD003FD6F7 /* Rotten_MangoesTests.m */; };
 		129E27291BA8048800B0200D /* RMMovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129E27281BA8048800B0200D /* RMMovieDetailViewController.m */; };
+		129E272F1BA8BDAD00B0200D /* RMReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129E272E1BA8BDAD00B0200D /* RMReviewViewController.m */; };
+		129E27321BA8BDF400B0200D /* RMReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 129E27311BA8BDF400B0200D /* RMReview.m */; };
+		129E27351BA8C0B000B0200D /* NSDate+DateFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = 129E27341BA8C0B000B0200D /* NSDate+DateFromString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,12 @@
 		1299CE1C1BA747AD003FD6F7 /* Rotten_MangoesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rotten_MangoesTests.m; sourceTree = "<group>"; };
 		129E27271BA8048800B0200D /* RMMovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMovieDetailViewController.h; sourceTree = "<group>"; };
 		129E27281BA8048800B0200D /* RMMovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMovieDetailViewController.m; sourceTree = "<group>"; };
+		129E272D1BA8BDAD00B0200D /* RMReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMReviewViewController.h; sourceTree = "<group>"; };
+		129E272E1BA8BDAD00B0200D /* RMReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMReviewViewController.m; sourceTree = "<group>"; };
+		129E27301BA8BDF400B0200D /* RMReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMReview.h; sourceTree = "<group>"; };
+		129E27311BA8BDF400B0200D /* RMReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMReview.m; sourceTree = "<group>"; };
+		129E27331BA8C0B000B0200D /* NSDate+DateFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateFromString.h"; sourceTree = "<group>"; };
+		129E27341BA8C0B000B0200D /* NSDate+DateFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateFromString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +115,14 @@
 				1299CE081BA747AD003FD6F7 /* RMInTheatresMasterViewController.m */,
 				129E27271BA8048800B0200D /* RMMovieDetailViewController.h */,
 				129E27281BA8048800B0200D /* RMMovieDetailViewController.m */,
+				129E272D1BA8BDAD00B0200D /* RMReviewViewController.h */,
+				129E272E1BA8BDAD00B0200D /* RMReviewViewController.m */,
 				123276171BA74D3F00CD8675 /* RMMovie.h */,
 				123276181BA74D3F00CD8675 /* RMMovie.m */,
+				129E27301BA8BDF400B0200D /* RMReview.h */,
+				129E27311BA8BDF400B0200D /* RMReview.m */,
+				129E27331BA8C0B000B0200D /* NSDate+DateFromString.h */,
+				129E27341BA8C0B000B0200D /* NSDate+DateFromString.m */,
 				1232761A1BA7547D00CD8675 /* NSNumber+NumberFromString.h */,
 				1232761B1BA7547D00CD8675 /* NSNumber+NumberFromString.m */,
 				123276201BA77BA900CD8675 /* NSURLSession+DownloadFromAddress.h */,
@@ -252,8 +267,11 @@
 				123276221BA77BA900CD8675 /* NSURLSession+DownloadFromAddress.m in Sources */,
 				1299CE031BA747AD003FD6F7 /* RMAppDelegate.m in Sources */,
 				123276191BA74D3F00CD8675 /* RMMovie.m in Sources */,
+				129E27351BA8C0B000B0200D /* NSDate+DateFromString.m in Sources */,
+				129E272F1BA8BDAD00B0200D /* RMReviewViewController.m in Sources */,
 				1232761C1BA7547D00CD8675 /* NSNumber+NumberFromString.m in Sources */,
 				1299CE091BA747AD003FD6F7 /* RMInTheatresMasterViewController.m in Sources */,
+				129E27321BA8BDF400B0200D /* RMReview.m in Sources */,
 				129E27291BA8048800B0200D /* RMMovieDetailViewController.m in Sources */,
 				1299CE001BA747AD003FD6F7 /* main.m in Sources */,
 			);
