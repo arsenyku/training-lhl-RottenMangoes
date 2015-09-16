@@ -28,11 +28,6 @@ typedef NS_ENUM(NSInteger, ImageType) {
 
 -(NSArray*)actorNames;
 
--(UIImage*)imageWithType:(ImageType)type;
-
--(void)downloadImageWithType:(ImageType)type
-                  completion:(void (^)(UIImage *downloadedImage, NSError *error))completionHandler;
-
 -(instancetype)initWithDictionary:(NSDictionary*)data;
 
 -(NSString*)imageAddressWithType:(ImageType)type;

@@ -11,5 +11,4 @@
 
 @interface RMMovieCell : UICollectionViewCell
 -(void)setContent:(RMMovie*)movie;
--(void)setContentImage:(UIImage*)image;
 @end

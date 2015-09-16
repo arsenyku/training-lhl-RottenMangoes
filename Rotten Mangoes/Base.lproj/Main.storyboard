@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hyX-yH-edk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -116,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ho-DD-JnX">
-                                <rect key="frame" x="300" y="70" width="300" height="450"/>
+                                <rect key="frame" x="210" y="35" width="374" height="560"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6ho-DD-JnX" secondAttribute="height" multiplier="2:3" id="9ng-JB-mZY"/>
                                 </constraints>
@@ -127,19 +128,19 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-WM-aV0" userLabel="Label1">
-                                <rect key="frame" x="16" y="70" width="274" height="21"/>
+                                <rect key="frame" x="16" y="70" width="184" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czx-tU-QBq" userLabel="Label2">
-                                <rect key="frame" x="16" y="101" width="274" height="21"/>
+                                <rect key="frame" x="16" y="101" width="184" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSP-3S-BRj" userLabel="Label3">
-                                <rect key="frame" x="16" y="152" width="274" height="21"/>
+                                <rect key="frame" x="16" y="152" width="184" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="130" id="PTQ-Fb-m4R"/>
                                 </constraints>
@@ -147,35 +148,26 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoL-Cr-Lzo">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkB-6X-amN">
+                                <rect key="frame" x="539" y="550" width="70" height="70"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="SoL-Cr-Lzo" secondAttribute="height" multiplier="1:1" id="LMS-uJ-oaP"/>
-                                    <constraint firstAttribute="width" constant="60" id="Yhj-Kq-jd2"/>
+                                    <constraint firstAttribute="width" secondItem="qkB-6X-amN" secondAttribute="height" multiplier="1:1" id="bw8-M3-Pe1"/>
+                                    <constraint firstAttribute="width" constant="70" id="oGQ-q9-0Tr"/>
                                 </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Reviews">
+                                    <color key="titleColor" red="1" green="0.097407475219999998" blue="0.13424945050000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="LMS-uJ-oaP"/>
-                                        <exclude reference="Yhj-Kq-jd2"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="-71" y="95" width="60" height="60"/>
-                                    <mask key="constraints">
-                                        <include reference="LMS-uJ-oaP"/>
-                                        <include reference="Yhj-Kq-jd2"/>
-                                    </mask>
-                                </variation>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6ho-DD-JnX" firstAttribute="width" secondItem="17P-OO-jXU" secondAttribute="width" multiplier="1:2" id="0bz-ic-zOf" userLabel="Image width"/>
+                            <constraint firstItem="6ho-DD-JnX" firstAttribute="width" secondItem="17P-OO-jXU" secondAttribute="width" multiplier="1:2" id="0bz-ic-zOf" userLabel="ImageView width (narrow)"/>
                             <constraint firstItem="HMN-WM-aV0" firstAttribute="leading" secondItem="17P-OO-jXU" secondAttribute="leadingMargin" id="6Fh-tc-tdj" userLabel="Label1 left"/>
-                            <constraint firstItem="6ho-DD-JnX" firstAttribute="top" secondItem="17P-OO-jXU" secondAttribute="top" constant="70" id="8C2-Ut-AAA" userLabel="ImageView top "/>
+                            <constraint firstItem="6ho-DD-JnX" firstAttribute="top" secondItem="17P-OO-jXU" secondAttribute="top" constant="35" id="8C2-Ut-AAA" userLabel="ImageView top ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="70"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="HMN-WM-aV0" secondAttribute="centerX" id="99E-ES-K19" userLabel="Label1 centre x"/>
                             <constraint firstItem="HMN-WM-aV0" firstAttribute="trailing" secondItem="czx-tU-QBq" secondAttribute="trailing" id="9RT-3f-1H1" userLabel="Label1 right"/>
                             <constraint firstItem="BSP-3S-BRj" firstAttribute="leading" secondItem="HMN-WM-aV0" secondAttribute="leading" id="9U1-bd-gFA" userLabel="Label 3 left"/>
@@ -185,6 +177,8 @@
                             <constraint firstItem="BSP-3S-BRj" firstAttribute="leading" secondItem="17P-OO-jXU" secondAttribute="leadingMargin" id="Nbw-AD-aJF" userLabel="Label3 left (narrow)">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="qkB-6X-amN" firstAttribute="centerX" secondItem="6ho-DD-JnX" secondAttribute="trailing" constant="-10" id="PdB-Mi-ZEp" userLabel="Button centre x"/>
+                            <constraint firstItem="6ho-DD-JnX" firstAttribute="height" secondItem="17P-OO-jXU" secondAttribute="height" constant="-40" id="VPv-Kg-4Vj" userLabel="ImageView height"/>
                             <constraint firstItem="czx-tU-QBq" firstAttribute="leading" secondItem="17P-OO-jXU" secondAttribute="leadingMargin" id="XO8-Rl-jYq" userLabel="Label2 left (narrow)">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -193,60 +187,55 @@
                             <constraint firstItem="czx-tU-QBq" firstAttribute="trailing" secondItem="17P-OO-jXU" secondAttribute="trailingMargin" id="fVt-mc-p6S" userLabel="Label2 right (narrow)">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="SoL-Cr-Lzo" firstAttribute="centerX" secondItem="6ho-DD-JnX" secondAttribute="centerX" constant="-241" id="gRs-CB-fWt"/>
+                            <constraint firstItem="qkB-6X-amN" firstAttribute="centerY" secondItem="6ho-DD-JnX" secondAttribute="bottom" constant="-10" id="fyT-uE-X5f" userLabel="Button centre y"/>
                             <constraint firstItem="BSP-3S-BRj" firstAttribute="trailing" secondItem="17P-OO-jXU" secondAttribute="trailingMargin" id="jBE-Lf-YBE" userLabel="Label3 right (narrow)">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="BSP-3S-BRj" firstAttribute="trailing" secondItem="czx-tU-QBq" secondAttribute="trailing" id="l1O-8q-SuS" userLabel="Label2 right"/>
                             <constraint firstItem="BSP-3S-BRj" firstAttribute="top" secondItem="czx-tU-QBq" secondAttribute="bottom" constant="30" id="qzG-Y9-uVT" userLabel="Spacer 2 to 3"/>
-                            <constraint firstItem="6ho-DD-JnX" firstAttribute="trailing" secondItem="17P-OO-jXU" secondAttribute="trailing" id="ryy-ew-YXY" userLabel="ImageView right"/>
+                            <constraint firstItem="6ho-DD-JnX" firstAttribute="trailing" secondItem="17P-OO-jXU" secondAttribute="trailingMargin" id="ryy-ew-YXY" userLabel="ImageView right"/>
                             <constraint firstItem="czx-tU-QBq" firstAttribute="leading" secondItem="HMN-WM-aV0" secondAttribute="leading" id="xt4-9n-aeS" userLabel="Label 2 left"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="SoL-Cr-Lzo"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="gRs-CB-fWt"/>
-                                <exclude reference="d1A-n4-dOE"/>
-                                <exclude reference="XO8-Rl-jYq"/>
-                                <exclude reference="fVt-mc-p6S"/>
                                 <exclude reference="99E-ES-K19"/>
                                 <exclude reference="MRo-xt-M3u"/>
+                                <exclude reference="XO8-Rl-jYq"/>
+                                <exclude reference="fVt-mc-p6S"/>
                                 <exclude reference="Nbw-AD-aJF"/>
                                 <exclude reference="jBE-Lf-YBE"/>
+                                <exclude reference="0bz-ic-zOf"/>
+                                <exclude reference="d1A-n4-dOE"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="SoL-Cr-Lzo"/>
-                            </mask>
                             <mask key="constraints">
-                                <include reference="gRs-CB-fWt"/>
-                                <include reference="0bz-ic-zOf"/>
-                                <include reference="8C2-Ut-AAA"/>
-                                <include reference="d1A-n4-dOE"/>
-                                <exclude reference="ryy-ew-YXY"/>
-                                <include reference="N1y-Xd-EoN"/>
-                                <include reference="XO8-Rl-jYq"/>
-                                <include reference="fVt-mc-p6S"/>
-                                <exclude reference="xt4-9n-aeS"/>
                                 <exclude reference="6Fh-tc-tdj"/>
                                 <include reference="99E-ES-K19"/>
                                 <exclude reference="9RT-3f-1H1"/>
                                 <include reference="MRo-xt-M3u"/>
                                 <exclude reference="bO2-cC-Jfh"/>
+                                <include reference="N1y-Xd-EoN"/>
+                                <include reference="XO8-Rl-jYq"/>
+                                <include reference="fVt-mc-p6S"/>
+                                <exclude reference="xt4-9n-aeS"/>
                                 <exclude reference="9U1-bd-gFA"/>
                                 <exclude reference="BlH-D8-nBl"/>
                                 <include reference="Nbw-AD-aJF"/>
                                 <include reference="jBE-Lf-YBE"/>
                                 <include reference="qzG-Y9-uVT"/>
+                                <include reference="0bz-ic-zOf"/>
+                                <include reference="8C2-Ut-AAA"/>
+                                <exclude reference="VPv-Kg-4Vj"/>
+                                <include reference="d1A-n4-dOE"/>
+                                <exclude reference="ryy-ew-YXY"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="castLabel" destination="czx-tU-QBq" id="i49-F4-siT"/>
                         <outlet property="movieImageView" destination="6ho-DD-JnX" id="rIN-5j-Hli"/>
+                        <outlet property="reviewsButton" destination="qkB-6X-amN" id="2P1-lH-F2y"/>
                         <outlet property="synopsisLabel" destination="BSP-3S-BRj" id="K8o-kY-o68"/>
                         <outlet property="titleLabel" destination="HMN-WM-aV0" id="FDi-OA-GII"/>
                     </connections>

@@ -7,6 +7,7 @@
 //
 
 #import "RMMovieCell.h"
+#import "NSURLSession+DownloadFromAddress.h"
 
 @interface RMMovieCell()
 @property (weak, nonatomic) IBOutlet UIImageView *collectionImageView;
@@ -35,16 +36,51 @@
 
     self.titleLabel.text = self.movie.title;
     self.ratingLabel.text = [NSString stringWithFormat:@"%@", self.movie.mpaaRating];
-    self.collectionImageView.image = [self.movie imageWithType:Original];
+    self.collectionImageView.image = nil;
 
+    [self downloadMovieImage];
 }
 
 
--(void)setContentImage:(UIImage*)image{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        self.collectionImageView.image = image;
-    });
-}
+-(void)downloadMovieImage{
+    
+    NSString* movieImageAddress = [self.movie imageAddressWithType:Original];
+ 
+    if (self.downloadTask){
+        [self.downloadTask suspend];
+        [self.downloadTask cancel];
+    }
+    
+    self.downloadTask = [NSURLSession downloadFromAddress:movieImageAddress
+                                               completion:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                   
+                                                   
+                                                   NSString *expectedURL = [self.movie imageAddressWithType:Original];
+                                                   
+                                                   if (! [response.URL.absoluteString isEqualToString:expectedURL]){
+                                                       NSLog(@"Discarding stale data from %@", response.URL.absoluteString);
+                                                       return ;
+                                                   }
+                                                   
+                                                   
+                                                   if (error)
+                                                       NSLog(@"Error while downloading image: %@", error);
+                                                   
+                                                   if (error.code == NSURLErrorCancelled)
+                                                       return;
+                                                   
+                                                   UIImage *downloadedImage = [UIImage imageWithData:data];
+                                                   
+                                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                                       
+                                                       self.collectionImageView.image = downloadedImage;
+                                                       
+                                                   });
+                                                   
+                                                   
+                                               }
+                         ];
+    
 
+}
 @end

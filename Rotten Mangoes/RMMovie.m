@@ -7,8 +7,7 @@
 //
 
 #import "RMMovie.h"
-#import "NSURLSession+DownloadFromAddress.h"
-
+#import "NSNumber+NumberFromString.h"
 
 static NSString* const ImageKey_Thumbnail = @"thumbnail";
 static NSString* const ImageKey_Original = @"original";
@@ -37,9 +36,6 @@ static NSString* const HighResImageUrl = @"dkpu1ddg7pbsk.cloudfront.net";
 @property(nonatomic, strong)NSString* synopsis;
 @property(nonatomic, strong)NSDictionary* imageAddresses;
 @property(nonatomic, strong)NSDictionary* cast;
-@property(nonatomic, strong)NSMutableDictionary* imagesByImageType;
-
-@property(nonatomic, strong)NSURLSessionTask *downloadTask;
 @end
 @implementation RMMovie
 -(instancetype)initWithDictionary:(NSDictionary*)movieData{
@@ -53,7 +49,6 @@ static NSString* const HighResImageUrl = @"dkpu1ddg7pbsk.cloudfront.net";
         _synopsis = movieData[ InTheatresKey_Synopsis ];
         _imageAddresses = movieData[ InTheatresKey_Images ];
         _cast = movieData[ InTheatresKey_Cast ];
-        _imagesByImageType = [NSMutableDictionary new];
     }
     return self;
 }
@@ -66,50 +61,6 @@ static NSString* const HighResImageUrl = @"dkpu1ddg7pbsk.cloudfront.net";
         [result addObject:actorName];
     }
     return [result copy];
-}
-
--(UIImage*)imageWithType:(ImageType)type{
-    return self.imagesByImageType[ [NSNumber numberWithInt:type ] ];
-}
-
-
--(void)downloadImageWithType:(ImageType)type
-                  completion:(void (^)(UIImage *, NSError *))completionHandler{
-
-    NSString* movieImageAddress = [self imageAddressWithType:Original];
-    
-    if (self.downloadTask){
-        [self.downloadTask suspend];
-        [self.downloadTask cancel];
-    }
-    
-    self.downloadTask = [NSURLSession downloadFromAddress:movieImageAddress
-                                               completion:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                   
-                                                   
-                                                   NSString *expectedURL = [self imageAddressWithType:Original];
-                                                   
-                                                   if (! [response.URL.absoluteString isEqualToString:expectedURL]){
-                                                       NSLog(@"Discarding stale data from %@", response.URL.absoluteString);
-                                                       return ;
-                                                   }
-                                                   
-                                                   
-                                                   if (error)
-                                                       NSLog(@"Error while downloading image: %@", error);
-                                                   
-                                                   if (error.code == NSURLErrorCancelled)
-                                                       return;
-                                                   
-                                                   UIImage *downloadedImage = [UIImage imageWithData:data];
-                                                   
-                                                   self.imagesByImageType[ [NSNumber numberWithInt:type] ] = downloadedImage;
-                                                   
-                                                   completionHandler(downloadedImage, error);
-                                                   
-                                               }
-                         ];
-    
 }
 
 -(NSString *)imageAddressWithType:(ImageType)type{
