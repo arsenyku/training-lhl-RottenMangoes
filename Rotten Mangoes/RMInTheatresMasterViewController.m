@@ -81,7 +81,15 @@ static NSString* const InTheatresKey_Total = @"total";
     RMMovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCell"
                                                                   forIndexPath:indexPath] ;
 
-    [cell setContent:self.moviesInTheatres[ indexPath.item ] ];
+    RMMovie *movie = self.moviesInTheatres[ indexPath.item ];
+    [cell setContent:movie ];
+    
+    if ([movie imageWithType:Original] == nil)
+        [movie downloadImageWithType:Original completion:^(UIImage *downloadedImage, NSError *error) {
+            [cell setContentImage:downloadedImage];
+        }];
+    
+    
 
     if (self.moviesPerPage * self.currentPage - 1 <= indexPath.item){
         [self loadMoreData];

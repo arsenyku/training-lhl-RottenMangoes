@@ -24,7 +24,8 @@
     // Do any additional setup after loading the view.
     if (self.movie){
         self.titleLabel.text = self.movie.title;
-        self.castLabel.text = [self.movie.actorNames componentsJoinedByString:@", "];
+        self.castLabel.text = [NSString stringWithFormat:@"Starring: %@",
+                               [self.movie.actorNames componentsJoinedByString:@", "]];
         self.synopsisLabel.text = self.movie.synopsis;
     }
 }
